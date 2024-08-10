@@ -34,6 +34,7 @@ body.dim {
 }
 
 .nav-bar ul {
+  position: relative;
   list-style: none;
   display: flex;
   gap: 20px;
@@ -236,4 +237,104 @@ a {
   border: none;
   background-color: orange;
   color: white;
+}
+.hamburger {
+  display: none;
+}
+.cross-icon {
+  display: none;
+  color: crimson;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  cursor: pointer;
+}
+/* media queries for small screens */
+@media screen and (max-width: 760px) {
+  .card-container{
+    grid-template-columns: 1fr 1fr;
+  }
+  .hamburger {
+    display: block;
+  }
+  .btn-bars {
+    padding: 8px 12px;
+    border: 1px solid gray;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .cross-icon {
+    display: inline-block;
+  }
+  .fa-bars {
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+  }
+  .nav-bar ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    transition: right 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bar .sm-ul {
+    right: 0;
+  }
+  .nav-bar .sm-ul li {
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+  }
+  .nav-bar .sm-ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav-bar .sm-ul li a:hover {
+    color: #ccc;
+  }
+  .quick-info .text-info .title {
+    font-size: 27px;
+  }
+  .quick-info .text-info .btn-start{
+   font-size: 17px;
+   max-width: 60%;
+  }
+  
+}
+
+@media screen and (max-width:460px) {
+  .quick-info .text-info{
+    width: 100%;
+  }
+  .quick-info .text-info .title{
+    font-size: 22px;
+  }
+  .quick-info .text-info .text-p1{
+font-size: 15px;
+  }
+  .quick-info .img-landing{
+  display: none;
+  }
+.form-get-recipe{
+  flex-direction: column;
+  gap: 10px;
+}
+.h1-main{
+  font-size: 25px;
+  text-align: center;
+}
+.card-container{
+  grid-template-columns: 1fr;
+}
 }
